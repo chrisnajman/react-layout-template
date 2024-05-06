@@ -8,15 +8,15 @@
   font-size: 10px;
   overflow-y: scroll;
 
-  --bg: white;
-  --fg: black;
+  --bg: black;
+  --fg: white;
   background-color: var(--bg);
   color: var(--fg);
 }
 
-.darkmode {
-  --bg: black;
-  --fg: white;
+.lightmode {
+  --bg: white;
+  --fg: black;
   background-color: var(--bg);
   color: var(--fg);
 }

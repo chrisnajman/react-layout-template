@@ -2,10 +2,10 @@ import { useState, useEffect } from "react"
 import { MdDarkMode, MdLightMode } from "react-icons/md"
 
 function BtnTheme() {
-  const [theme, setTheme] = useState(true)
+  const [theme, setTheme] = useState(false)
 
   useEffect(() => {
-    document.documentElement.classList.toggle("darkmode", theme)
+    document.documentElement.classList.toggle("lightmode", theme)
   }, [theme])
 
   function handleMode() {
@@ -15,15 +15,15 @@ function BtnTheme() {
     <button
       type="button"
       onClick={handleMode}
-      aria-pressed={theme ? "true" : "false"}
-      aria-label="Toggle dark theme"
+      aria-pressed={theme ? "false" : "true"}
+      aria-label="Toggle theme"
     >
       {theme ? (
-        <MdDarkMode aria-hidden="true" />
-      ) : (
         <MdLightMode aria-hidden="true" />
+      ) : (
+        <MdDarkMode aria-hidden="true" />
       )}
-      <span>Darkmode: {theme ? "on" : "off"}</span>
+      <span>Darkmode: {theme ? "off" : "on"}</span>
     </button>
   )
 }
