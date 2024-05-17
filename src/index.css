@@ -60,6 +60,13 @@ h1 {
 button {
   all: unset;
   cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.theme-toggler {
   position: absolute;
   top: 0;
   right: 0;
@@ -67,14 +74,56 @@ button {
   align-items: center;
   gap: 1rem;
   padding: 0.5rem 1rem;
-  font-size: clamp(1.4rem, 1.3391rem + 0.3478vw, 1.6rem);
-  font-family: inherit;
-  background: #405cf5;
-  color: white;
-  border-bottom-left-radius: 0.5rem;
 
-  &:hover {
-    opacity: 0.8;
+  & button {
+    font-size: clamp(1.4rem, 1.3391rem + 0.3478vw, 1.6rem);
+    font-family: inherit;
+    background: #405cf5;
+    color: white;
+    width: 2.5rem;
+    height: 1.3rem;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2px;
+
+    & span {
+      height: 1.3rem;
+      width: 1.3rem;
+      background-color: white;
+      border-radius: 50%;
+    }
+  }
+
+  & p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: currentColor;
+
+    &.light {
+      opacity: 0.75;
+    }
+
+    &.dark {
+      opacity: 1;
+    }
+  }
+}
+
+.lightmode {
+  & .theme-toggler button {
+    justify-content: flex-start;
+  }
+
+  & p {
+    &.light {
+      opacity: 1;
+    }
+
+    &.dark {
+      opacity: 0.5;
+    }
   }
 }
 
