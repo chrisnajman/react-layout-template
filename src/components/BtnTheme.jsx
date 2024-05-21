@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react"
 
 function BtnTheme() {
-  const [theme, setTheme] = useState(false)
+  const [theme, setTheme] = useState(
+    JSON.parse(localStorage.getItem("theme")) || false
+  )
 
   useEffect(() => {
     document.documentElement.classList.toggle("lightmode", theme)
+    localStorage.setItem("theme", theme)
   }, [theme])
 
   function handleMode() {
